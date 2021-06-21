@@ -62,3 +62,26 @@ function greetDevelopers(list) {
   return list;
 }
 //https://www.codewars.com/kata/5827acd5f524dd029d0005a4/train/javascript
+function isRubyComing(list) {
+  return list.some((dev) => dev.language.includes("Ruby"));
+}
+//https://www.codewars.com/kata/5827bc50f524dd029d0005f2/train/javascript
+function getFirstPython(list) {
+  let dev = list.find((dev) => dev.language === "Python");
+  if (dev === undefined) {
+    return "There will be no Python developers";
+  } else {
+    return `${dev.firstName}, ${dev.country}`;
+  }
+}
+//https://www.codewars.com/kata/5828713ed04efde70e000346/train/javascript NOT DONE!!!
+function countLanguages(list) {
+  let cDevs = list.filter((dev) => dev.language === "C");
+  let javaScriptDevs = list.filter((dev) => dev.language === "JavaScript");
+  let rubyDevs = list.filter((dev) => dev.language === "Ruby");
+  let devObj = {};
+  devObj.C = cDevs.length;
+  devObj.JavaScript = javaScriptDevs.length;
+  devObj.Ruby = rubyDevs.length;
+  return devObj;
+}
